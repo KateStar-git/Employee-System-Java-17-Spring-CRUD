@@ -10,6 +10,7 @@ Employee login, adding, editing and removing from the employee list Java 17, Spr
 * Thymeleaf
 * HTML5
 * Tomcat 10.1.8
+* Maven
 
 ## General Info
 The application is designed to log in a person, enable adding an employee, editing his data or removing him from the employee list.
