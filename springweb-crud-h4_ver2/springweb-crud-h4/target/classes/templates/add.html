@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" lang="utf-8">
+
+<head th:insert="~{fragments/header :: header}" th:remove="tag">
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="container my-5">
+    <br>  </br>
+    <br>  </br>
+    <h2 class="mb-5" data-th-text="#{add.h2}"></h2>
+    <form action="#" th:action="@{/add}" th:object="${employee}" method="post">
+        <span th:insert="~{fragments/employee :: employee}" th:remove="tag"></span>
+        <button type="submit" class="btn btn-primary" th:text="#{add.button.add}"></button>
+        <a href="/index" class="btn btn-danger" th:text="#{add.button.cancel}"></a>
+    </form>
+</div>
+</body>
+</html>

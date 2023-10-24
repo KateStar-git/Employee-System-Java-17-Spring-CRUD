@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:insert="~{fragments/header :: header}" th:remove="tag">
+    <meta charset="UTF-8">
+</head>
+<body>
+
+<br>  </br>
+<br>  </br>
+    <center><h5 data-th-text="#{index.header.addEmployee}"></h5></center>
+        <div th:switch="${employees}" class="container my-5">
+
+
+    <div th:case="*">
+
+        <table class="table table-striped table-responsive-md">
+            <thead>
+            <tr>
+                <th th:text="#{index.label.LastName}"></th>
+                <th th:text="#{index.label.firstName}"></th>
+                <th th:text="#{index.label.salary}"></th>
+                <th th:text="#{index.button.edit}"></th>
+                <th th:text="#{index.button.delete}"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="e : ${employees}">
+                <td th:text="${e.lastName}"></td>
+                <td th:text="${e.firstName}"></td>
+                <td th:text="${e.salary}"></td>
+
+
+                <td><a th:href="@{/edit/{id}(id=${e.employeeId})}" class="btn btn-primary" th:text="#{index.button.edit}" ></a></td>
+
+
+                <td><a th:href="@{/delete/{id}(id=${e.employeeId})}" class="btn btn-primary" th:text="#{index.button.delete}"></a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p class="my-5"><a href="/add" class="btn btn-primary" th:text="#{index.button.addEmployee}"></a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+com\example\jsfcrud\controllers\InternationalizationConfiguration.class
+com\example\jsfcrud\controllers\EmployeeController.class
+com\example\jsfcrud\JsfCrudApplication.class
+com\example\jsfcrud\entities\Employee.class
+com\example\jsfcrud\repositories\EmployeeRepository.class

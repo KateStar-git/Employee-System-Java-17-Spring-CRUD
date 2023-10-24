@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="utf-8">
+
+
+<head th:insert="~{fragments/header :: header}" th:remove="tag">
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="container">
+    <br>  </br>
+    <br>  </br>
+    <h2 class="mb-5"><span th:text="#{update.h2}" th:remove="tag">Page Title</span></h2>
+
+    <form action="#" th:action="@{/update/{id}(id=${employee.employeeId})}" th:object="${employee}" method="post">
+        <span th:insert="~{fragments/employee :: employee}" th:remove="tag"></span>
+        <button type="submit" class="btn btn-primary" th:text="#{update.button.update}"></button>
+        <a href="/index" class="btn btn-danger" th:text="#{update.button.cancel}"></a>
+    </form>
+
+</div>
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
